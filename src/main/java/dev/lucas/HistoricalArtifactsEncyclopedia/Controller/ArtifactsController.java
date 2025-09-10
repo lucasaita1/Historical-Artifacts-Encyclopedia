@@ -36,7 +36,7 @@ public class ArtifactsController {
         return ResponseEntity.status(HttpStatus.CREATED).body(ArtifactMapper.toResponse(newArtifact));
     }
 
-    @GetMapping
+    @GetMapping ("/{id}")
     public ResponseEntity<ArtifactResponse> findById (@PathVariable Long id){
         return artifactsService.findById(id)
                 .map(artifacts -> ResponseEntity.ok(ArtifactMapper.toResponse(artifacts)))
