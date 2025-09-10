@@ -35,7 +35,7 @@ public class HistoricPersonController {
         return ResponseEntity.status(HttpStatus.CREATED).body(HistoricPersonMapper.toResponse(newPerson));
     }
 
-    @GetMapping
+    @GetMapping ("/{id}")
     public ResponseEntity<HistoricPersonResponse> getPersonById (@PathVariable Long id) {
         return historicPersonService.findById(id)
                 .map(historicPerson -> ResponseEntity.ok(HistoricPersonMapper.toResponse(historicPerson)))
