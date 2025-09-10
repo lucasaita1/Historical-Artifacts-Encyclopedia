@@ -43,7 +43,7 @@ public class ArtifactsController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping
+    @DeleteMapping ("/{id}")
     public void delete (@PathVariable Long id){
         artifactsService.DeleteById(id);
     }
