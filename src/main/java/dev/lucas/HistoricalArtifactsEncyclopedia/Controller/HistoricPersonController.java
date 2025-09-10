@@ -42,6 +42,7 @@ public class HistoricPersonController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping ("/{id}")
     public void deleteById (@PathVariable Long id){
         historicPersonService.deleteById(id);
     }
